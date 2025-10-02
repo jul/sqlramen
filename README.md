@@ -42,7 +42,7 @@ db.raw("select * from comment limit 5").all()
 Usage:
 ```bash
 
-db\_introspect sqlite:///../pdca/aide && xdot out.dot
+db_introspect sqlite:///../pdca/aide && xdot out.dot
 # introspecting sqlite:///../pdca/aide
 # nb col = 23
 # nb fk = 7
