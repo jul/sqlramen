@@ -54,3 +54,13 @@ output:
 
 ![entity relation diagram](https://github.com/jul/sqlramen/blob/main/out.png?raw=true)
 
+# Changelog
+
+## 0.9.2
+
+* improved README
+
+## 0.9.1
+
+* initial release
+
