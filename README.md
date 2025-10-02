@@ -1,6 +1,7 @@
-# SQLSoup
 
 SQLSoup is no longer supported and does not work with modern versions of SQLAlchemy. For modern support of ad-hoc models based on database reflection, please refer to the automap feature at: https://docs.sqlalchemy.org/en/stable/orm/extensions/automap.html
+
+SQLRamen intends to be a replacement to SQLSoup with a different API
 
 # SQLRamen
 
