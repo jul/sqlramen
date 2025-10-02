@@ -16,21 +16,7 @@ db = SQLRamen("sqlite:///../pdca/aide")
 user = db.query(db.table.user).filter_by(email="j@j.com").one()
 [ l.message for l in u.comment_collection ]
 # ['SCAM Manual\r\n\r\nA complete guide to create a guide with scam',
-#  'Synopsis\r\n\r\nA frontend to a pandoc toolchain to build a book in a supposedly new way.',
-#  'How to install and start it\r\n',
-#  'walkthrough to create this manual with the tool\r\n\r\nFirst post//landing page',
-#  'Quickstart',
-#  'rendering of first post ',
-#  'time to attach a content',
-#  'Time to edit the FIRST text which is special\r\n\r\nSetting a title for the document',
-#  'time to check on your book rendering !',
-#  'Rinse and repeat',
-#  'Editing your first text',
-#  'Sub case PDF rendering',
-#  'Dev notes',
-#  'model',
-#  'serendipity',
-#  'psycodélic',
+# ...
 #  'future plan',
 #  'further down']
 db.query(db.table.comment.message).join(db.table.comment.user
@@ -43,7 +29,27 @@ print([l for l in db.table.user.__table__.c])
 # Column('email', TEXT(), table=<user>, nullable=False),
 # Column('secret_token', TEXT(), table=<user>),
 # Column('secret_password', TEXT(), table=<user>, nullable=False)]
+db.raw("select * from comment limit 5").all()
+#[('2025-01-12 12:52:09', 1, 1, None, 'SCAM Manual\r\n\r\nA complete guide to create a guide with scam', None, 'story'),
+# ('2025-01-12 13:28:14', 2, 1, 1, 'Synopsis\r\n\r\nA frontend to a pandoc toolchain to build a book in a supposedly new way.', None, 'story_item'),
+# ('2025-01-12 13:28:47', 3, 1, 1, 'How to install and start it\r\n', None, 'story_item'),
+# ('2025-01-12 13:29:48', 4, 1, 1, 'walkthrough to create this manual with the tool\r\n\r\nFirst post//landing page', None, 'story_item'),
+# ('2025-01-12 13:30:23', 5, 1, 3, 'Quickstart', None, 'comment')]
 ```
 
+## db\_introspect
 
+Usage:
+```bash
+
+db\_introspect sqlite:///../pdca/aide && xdot out.dot
+# introspecting sqlite:///../pdca/aide
+# nb col = 23
+# nb fk = 7
+# output available in out.dot
+```
+
+output:
+
+![entity relation diagram](https://github.com/jul/sqlramen/blob/main/out.png?raw=true)
 
