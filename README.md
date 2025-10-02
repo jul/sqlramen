@@ -15,7 +15,7 @@ Usage is as simple as:
 from sqlramen import *
 db = SQLRamen("sqlite:///../pdca/aide")
 user = db.query(db.table.user).filter_by(email="j@j.com").one()
-[ l.message for l in u.comment_collection ]
+[ l.message for l in user.comment_collection ]
 # ['SCAM Manual\r\n\r\nA complete guide to create a guide with scam',
 # ...
 #  'future plan',
@@ -56,7 +56,7 @@ output:
 
 # Changelog
 
-## 0.9.2
+## 0.9.2//0.9.3
 
 * improved README
 
